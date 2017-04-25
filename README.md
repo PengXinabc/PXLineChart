@@ -148,7 +148,7 @@ pod "PXLineChart"
 
 ```
 
-![](http://ooyp7x3r4.bkt.clouddn.com/aaa.png)
+![](http://g.recordit.co/r6OtDd2qoh.gif)
 
 
 详细说明移步[简书](www.baidu.com)
