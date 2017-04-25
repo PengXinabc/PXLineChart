@@ -1,11 +1,23 @@
-//
-//  ViewController.m
-//  PXLineChart
-//
-//  Created by Xin Peng on 17/4/12.
-//  Copyright © 2017年 EB. All rights reserved.
-//
+# PXLineChart
+![](https://img.shields.io/badge/build-passing-brightgreen.svg) ![](https://img.shields.io/badge/pod-v1.0.0-yellow.svg) ![](https://img.shields.io/badge/Carthage-compatible-green.svg) 
+#概述
 
+一个简单的可滑动的折线图，可滑动，可添加多条
+
+#安装
+* CocoaPods
+
+```
+pod "PXLineChart"
+```
+* Carthage
+
+```
+pod "PXLineChart"
+```
+
+#使用
+```
 #import "ViewController.h"
 #import "PXLineChartView.h"
 #import "PointItem.h"
@@ -133,10 +145,11 @@
     [self presentViewController:alertView animated:YES completion:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+```
+
+![](media/14931106672534/aaa.gif)
 
 
-@end
+详细说明移步[简书](www.baidu.com)
+
+
