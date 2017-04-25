@@ -1,10 +1,11 @@
 # PXLineChart
 ![](https://img.shields.io/badge/build-passing-brightgreen.svg) ![](https://img.shields.io/badge/pod-v1.0.0-yellow.svg) ![](https://img.shields.io/badge/Carthage-compatible-green.svg) 
-#概述
+
+# 概述
 
 一个简单的可滑动的折线图，可滑动，可添加多条
 
-#安装
+# 安装
 * CocoaPods
 
 ```
@@ -16,7 +17,7 @@ pod "PXLineChart"
 pod "PXLineChart"
 ```
 
-#使用
+# 使用
 ```
 #import "ViewController.h"
 #import "PXLineChartView.h"
