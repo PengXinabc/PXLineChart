@@ -22,18 +22,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juI-Tt-qUX" customClass="PXLineChartView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="400"/>
+                                <rect key="frame" x="0.0" y="208.5" width="355" height="250"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="vVo-sh-yhc"/>
+                                    <constraint firstAttribute="height" constant="250" id="vVo-sh-yhc"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="juI-Tt-qUX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZZQ-xZ-VL2"/>
                             <constraint firstItem="juI-Tt-qUX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dlB-o2-4hb"/>
-                            <constraint firstAttribute="trailing" secondItem="juI-Tt-qUX" secondAttribute="trailing" id="wHT-B9-MvU"/>
-                            <constraint firstItem="juI-Tt-qUX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="z9N-Dx-PKb"/>
+                            <constraint firstAttribute="trailing" secondItem="juI-Tt-qUX" secondAttribute="trailing" constant="20" id="wHT-B9-MvU"/>
                         </constraints>
                     </view>
                     <connections>
