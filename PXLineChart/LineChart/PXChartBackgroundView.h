@@ -18,4 +18,6 @@
 
 - (instancetype)initWithXaxisView:(PXXview *)xAxisView
                         yAxisView:(PXYview *)yAxisView;
+
+- (void)refresh;
 @end

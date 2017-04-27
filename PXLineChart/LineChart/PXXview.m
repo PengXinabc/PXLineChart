@@ -35,7 +35,7 @@
     _delegate = delegate;
 }
 
-- (void)reloadYaxis {
+- (void)reloadXaxis {
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     if (self.axisAttributes[yAxisColor]) {
         self.xlineView.backgroundColor = self.axisAttributes[yAxisColor];
@@ -72,7 +72,7 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self reloadYaxis];
+    [self reloadXaxis];
 }
 
 - (void)setAxisAttributes:(NSDictionary *)axisAttributes {
@@ -85,5 +85,10 @@
 - (CGFloat)pointOfXcoordinate:(NSString *)xAxisValue {
     NSUInteger xIndex = [self.xElements indexOfObject:xAxisValue];
     return (xIndex+1)*_xElementInterval;
+}
+
+- (void)refresh {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 @end

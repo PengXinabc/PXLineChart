@@ -154,6 +154,6 @@ Drag the PXLineChart/LineChart folder into your project
 ![](http://g.recordit.co/r6OtDd2qoh.gif)
 
 
-详细说明移步[简书](www.baidu.com)
+详细说明移步[简书](http://www.jianshu.com/p/90c68507e378)
 
 

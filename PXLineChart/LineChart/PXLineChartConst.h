@@ -31,3 +31,4 @@ extern NSString *const pointFont; //point font - UIFont
 
 extern NSString *const pointHide; // 显示point - NSNumber（@1-不显示; @0-显示）
 
+

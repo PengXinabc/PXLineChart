@@ -21,4 +21,6 @@
  @return x轴坐标位置
  */
 - (CGFloat)pointOfXcoordinate:(NSString *)xAxisValue;
+
+- (void)refresh;
 @end

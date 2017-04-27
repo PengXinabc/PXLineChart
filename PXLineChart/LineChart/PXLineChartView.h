@@ -101,4 +101,6 @@ typedef NS_ENUM(NSUInteger, AxisType) {
 @interface PXLineChartView : UIView
 
 @property (nonatomic, weak) id<PXLineChartViewDelegate> delegate;
+
+- (void)reloadData;
 @end

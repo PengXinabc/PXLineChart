@@ -22,4 +22,6 @@
  @return y轴坐标位置
  */
 - (CGFloat)pointOfYcoordinate:(NSString *)yAxisValue;
+
+- (void)refresh;
 @end

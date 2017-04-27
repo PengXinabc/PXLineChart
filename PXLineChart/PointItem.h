@@ -16,4 +16,6 @@
 @property (nonatomic, strong) UIColor *chartLineColor;
 @property (nonatomic, strong) UIColor *chartPointColor;
 @property (nonatomic, strong) UIColor *pointValueColor;
+@property (nonatomic, strong) UIColor *chartFillColor;
+@property (nonatomic, assign) BOOL chartFill;
 @end

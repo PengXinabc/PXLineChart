@@ -156,4 +156,9 @@
 
 }
 
+- (void)reloadData {
+    [_xAxisView refresh];
+    [_yAxisView refresh];
+    [_chartBackgroundView refresh];
+}
 @end

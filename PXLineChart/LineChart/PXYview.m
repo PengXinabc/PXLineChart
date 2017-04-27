@@ -84,4 +84,9 @@
     return CGRectGetHeight(self.frame)-[yAxisValue floatValue]*_perPixelOfYvalue;
 }
 
+- (void)refresh {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+}
+
 @end

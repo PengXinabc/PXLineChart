@@ -34,4 +34,12 @@
 - (UIColor *)px_pointValueColor {
     return _pointValueColor;
 }
+
+- (UIColor *)px_chartFillColor {
+    return _chartFillColor;
+}
+
+- (BOOL)px_chartFill {
+    return _chartFill;
+}
 @end

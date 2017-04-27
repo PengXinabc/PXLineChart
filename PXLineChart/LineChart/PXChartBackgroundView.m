@@ -132,13 +132,22 @@ static char OperationKey;
         if ([startPointItem respondsToSelector:@selector(px_pointYvalue)]) {
             startY = [_yAxisView pointOfYcoordinate:[startPointItem px_pointYvalue]];
         }
+        BOOL isfill = NO;//是否填充
+        if ([startPointItem respondsToSelector:@selector(px_chartFill)]) {
+            isfill = [startPointItem px_chartFill];
+        }
         UIColor *strokeColor = [UIColor greenColor];
         if ([startPointItem respondsToSelector:@selector(px_chartLineColor)]) {
             strokeColor = [startPointItem px_chartLineColor];
         }
-        [strokeColor set];
-        CGPoint start = CGPointMake(startX,startY);
+        CGPoint start = CGPointZero;
+        if (isfill) {
+            start = CGPointMake(startX, [_yAxisView pointOfYcoordinate:@"0"]);
+        }else{
+            start = CGPointMake(startX,startY);
+        }
         [path moveToPoint:start];
+        CGPoint endXPoint = CGPointZero;
         for (int j = 0; j < points.count; j++) {
             id<PointItemProtocol> pointItem = points[j];
             CGFloat pointCenterX = 0.0;
@@ -208,9 +217,27 @@ static char OperationKey;
             //draw lines
             [path addLineToPoint:CGPointMake(pointCenterX, pointCenterY)];
             
+            endXPoint = CGPointMake(pointCenterX, [_yAxisView pointOfYcoordinate:@"0"]);
         }
-        CGContextAddPath(ctx, path.CGPath);
-        CGContextStrokePath(ctx);
+        
+        if (isfill) {
+            [path addLineToPoint:endXPoint];
+            UIColor *fillcolor = nil;
+            if ([startPointItem respondsToSelector:@selector(px_chartFillColor)]) {
+                fillcolor = [startPointItem px_chartFillColor];
+            }
+            if (!fillcolor) {
+                fillcolor = strokeColor;
+            }
+            [fillcolor set];
+            CGContextAddPath(ctx, path.CGPath);
+            CGContextFillPath(ctx);
+        }else{
+            [strokeColor set];
+            CGContextAddPath(ctx, path.CGPath);
+            CGContextStrokePath(ctx);
+        }
+    
     }
     
 }
@@ -219,5 +246,9 @@ static char OperationKey;
     if (_delegate && [_delegate respondsToSelector:@selector(elementDidClickedWithPointSuperIndex:pointSubIndex:)]) {
         [_delegate elementDidClickedWithPointSuperIndex:superIndex pointSubIndex:subIndex];
     }
+}
+
+- (void)refresh {
+    [self setNeedsDisplay];
 }
 @end
