@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "76CEA5C81EB17FDC00136FA0"
-               BuildableName = "PXLineChartFramework.framework"
+               BuildableName = "PXLineChart.framework"
                BlueprintName = "PXLineChartFramework"
                ReferencedContainer = "container:PXLineChart.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "76CEA5C81EB17FDC00136FA0"
-            BuildableName = "PXLineChartFramework.framework"
+            BuildableName = "PXLineChart.framework"
             BlueprintName = "PXLineChartFramework"
             ReferencedContainer = "container:PXLineChart.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "76CEA5C81EB17FDC00136FA0"
-            BuildableName = "PXLineChartFramework.framework"
+            BuildableName = "PXLineChart.framework"
             BlueprintName = "PXLineChartFramework"
             ReferencedContainer = "container:PXLineChart.xcodeproj">
          </BuildableReference>

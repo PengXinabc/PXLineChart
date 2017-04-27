@@ -14,8 +14,11 @@ pod "PXLineChart"
 * Carthage
 
 ```
-pod "PXLineChart"
+github "PengXinabc/PXLineChart"
 ```
+* 手动
+
+Drag the PXLineChart/LineChart folder into your project
 
 # 使用
 ```
