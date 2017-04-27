@@ -21,6 +21,19 @@
 		76A709061E9F5A320007BC8E /* PXXview.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A709051E9F5A320007BC8E /* PXXview.m */; };
 		76A709091E9F5A890007BC8E /* PXChartBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A709081E9F5A890007BC8E /* PXChartBackgroundView.m */; };
 		76B12D0E1EA206310087CE49 /* PointItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B12D0D1EA206310087CE49 /* PointItem.m */; };
+		76CEA5D01EB17FDC00136FA0 /* PXLineChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76CEA5C91EB17FDC00136FA0 /* PXLineChart.framework */; };
+		76CEA5D11EB17FDC00136FA0 /* PXLineChart.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 76CEA5C91EB17FDC00136FA0 /* PXLineChart.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		76CEA5DD1EB1814E00136FA0 /* PXLineChartView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A708FA1E9E41E30007BC8E /* PXLineChartView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5DE1EB1815E00136FA0 /* PXChartBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A709071E9F5A890007BC8E /* PXChartBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5DF1EB1815E00136FA0 /* PXLineChartConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A708FE1E9F27EF0007BC8E /* PXLineChartConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5E01EB1815E00136FA0 /* PointItemProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 766FA9D71EA2046C00C85C2E /* PointItemProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5E11EB1815E00136FA0 /* PXYview.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A709011E9F5A170007BC8E /* PXYview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5E21EB1815E00136FA0 /* PXXview.h in Headers */ = {isa = PBXBuildFile; fileRef = 76A709041E9F5A320007BC8E /* PXXview.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		76CEA5E31EB1817200136FA0 /* PXLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A708FB1E9E41E30007BC8E /* PXLineChartView.m */; };
+		76CEA5E41EB1817200136FA0 /* PXChartBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A709081E9F5A890007BC8E /* PXChartBackgroundView.m */; };
+		76CEA5E51EB1817200136FA0 /* PXLineChartConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A708FF1E9F27EF0007BC8E /* PXLineChartConst.m */; };
+		76CEA5E61EB1817200136FA0 /* PXYview.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A709021E9F5A170007BC8E /* PXYview.m */; };
+		76CEA5E71EB1817200136FA0 /* PXXview.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A709051E9F5A320007BC8E /* PXXview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +51,28 @@
 			remoteGlobalIDString = 76A708C21E9E418B0007BC8E;
 			remoteInfo = PXLineChart;
 		};
+		76CEA5CE1EB17FDC00136FA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76A708BB1E9E418B0007BC8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76CEA5C81EB17FDC00136FA0;
+			remoteInfo = PXLineChartFramework;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76CEA5D51EB17FDC00136FA0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				76CEA5D11EB17FDC00136FA0 /* PXLineChart.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		766FA9D71EA2046C00C85C2E /* PointItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointItemProtocol.h; sourceTree = "<group>"; };
@@ -70,6 +104,8 @@
 		76A709081E9F5A890007BC8E /* PXChartBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXChartBackgroundView.m; sourceTree = "<group>"; };
 		76B12D0C1EA206310087CE49 /* PointItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointItem.h; sourceTree = "<group>"; };
 		76B12D0D1EA206310087CE49 /* PointItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointItem.m; sourceTree = "<group>"; };
+		76CEA5C91EB17FDC00136FA0 /* PXLineChart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PXLineChart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CEA5CC1EB17FDC00136FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76CEA5D01EB17FDC00136FA0 /* PXLineChart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +131,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76CEA5C51EB17FDC00136FA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -103,6 +147,7 @@
 				76A708C51E9E418B0007BC8E /* PXLineChart */,
 				76A708DF1E9E418B0007BC8E /* PXLineChartTests */,
 				76A708EA1E9E418B0007BC8E /* PXLineChartUITests */,
+				76CEA5CA1EB17FDC00136FA0 /* PXLineChartFramework */,
 				76A708C41E9E418B0007BC8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +158,7 @@
 				76A708C31E9E418B0007BC8E /* PXLineChart.app */,
 				76A708DC1E9E418B0007BC8E /* PXLineChartTests.xctest */,
 				76A708E71E9E418B0007BC8E /* PXLineChartUITests.xctest */,
+				76CEA5C91EB17FDC00136FA0 /* PXLineChart.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -180,7 +226,31 @@
 			path = LineChart;
 			sourceTree = "<group>";
 		};
+		76CEA5CA1EB17FDC00136FA0 /* PXLineChartFramework */ = {
+			isa = PBXGroup;
+			children = (
+				76CEA5CC1EB17FDC00136FA0 /* Info.plist */,
+			);
+			path = PXLineChartFramework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		76CEA5C61EB17FDC00136FA0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CEA5DD1EB1814E00136FA0 /* PXLineChartView.h in Headers */,
+				76CEA5DE1EB1815E00136FA0 /* PXChartBackgroundView.h in Headers */,
+				76CEA5DF1EB1815E00136FA0 /* PXLineChartConst.h in Headers */,
+				76CEA5E01EB1815E00136FA0 /* PointItemProtocol.h in Headers */,
+				76CEA5E11EB1815E00136FA0 /* PXYview.h in Headers */,
+				76CEA5E21EB1815E00136FA0 /* PXXview.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		76A708C21E9E418B0007BC8E /* PXLineChart */ = {
@@ -190,10 +260,12 @@
 				76A708BF1E9E418B0007BC8E /* Sources */,
 				76A708C01E9E418B0007BC8E /* Frameworks */,
 				76A708C11E9E418B0007BC8E /* Resources */,
+				76CEA5D51EB17FDC00136FA0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				76CEA5CF1EB17FDC00136FA0 /* PBXTargetDependency */,
 			);
 			name = PXLineChart;
 			productName = PXLineChart;
@@ -236,6 +308,24 @@
 			productReference = 76A708E71E9E418B0007BC8E /* PXLineChartUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		76CEA5C81EB17FDC00136FA0 /* PXLineChartFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CEA5D41EB17FDC00136FA0 /* Build configuration list for PBXNativeTarget "PXLineChartFramework" */;
+			buildPhases = (
+				76CEA5C41EB17FDC00136FA0 /* Sources */,
+				76CEA5C51EB17FDC00136FA0 /* Frameworks */,
+				76CEA5C61EB17FDC00136FA0 /* Headers */,
+				76CEA5C71EB17FDC00136FA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PXLineChartFramework;
+			productName = PXLineChartFramework;
+			productReference = 76CEA5C91EB17FDC00136FA0 /* PXLineChart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -262,6 +352,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 76A708C21E9E418B0007BC8E;
 					};
+					76CEA5C81EB17FDC00136FA0 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = PEUS87V39Q;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 76A708BE1E9E418B0007BC8E /* Build configuration list for PBXProject "PXLineChart" */;
@@ -280,6 +375,7 @@
 				76A708C21E9E418B0007BC8E /* PXLineChart */,
 				76A708DB1E9E418B0007BC8E /* PXLineChartTests */,
 				76A708E61E9E418B0007BC8E /* PXLineChartUITests */,
+				76CEA5C81EB17FDC00136FA0 /* PXLineChartFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -303,6 +399,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		76A708E51E9E418B0007BC8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76CEA5C71EB17FDC00136FA0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,6 +447,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76CEA5C41EB17FDC00136FA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CEA5E31EB1817200136FA0 /* PXLineChartView.m in Sources */,
+				76CEA5E41EB1817200136FA0 /* PXChartBackgroundView.m in Sources */,
+				76CEA5E51EB1817200136FA0 /* PXLineChartConst.m in Sources */,
+				76CEA5E61EB1817200136FA0 /* PXYview.m in Sources */,
+				76CEA5E71EB1817200136FA0 /* PXXview.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -356,6 +471,11 @@
 			isa = PBXTargetDependency;
 			target = 76A708C21E9E418B0007BC8E /* PXLineChart */;
 			targetProxy = 76A708E81E9E418B0007BC8E /* PBXContainerItemProxy */;
+		};
+		76CEA5CF1EB17FDC00136FA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 76CEA5C81EB17FDC00136FA0 /* PXLineChartFramework */;
+			targetProxy = 76CEA5CE1EB17FDC00136FA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -541,6 +661,54 @@
 			};
 			name = Release;
 		};
+		76CEA5D21EB17FDC00136FA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PEUS87V39Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PXLineChartFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.PXLineChartFramework;
+				PRODUCT_MODULE_NAME = PXLineChart;
+				PRODUCT_NAME = PXLineChart;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		76CEA5D31EB17FDC00136FA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = PEUS87V39Q;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PXLineChartFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = test.PXLineChartFramework;
+				PRODUCT_MODULE_NAME = PXLineChart;
+				PRODUCT_NAME = PXLineChart;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,6 +747,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		76CEA5D41EB17FDC00136FA0 /* Build configuration list for PBXNativeTarget "PXLineChartFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CEA5D21EB17FDC00136FA0 /* Debug */,
+				76CEA5D31EB17FDC00136FA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
