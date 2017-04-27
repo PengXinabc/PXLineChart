@@ -5,6 +5,8 @@
 
 一个简单的可滑动的折线图，可滑动，可添加多条
 
+![](http://upload-images.jianshu.io/upload_images/1131567-f15b020baf9e4e12.gif?imageMogr2/auto-orient/strip)
+
 # 安装
 * CocoaPods
 
@@ -150,9 +152,6 @@ Drag the PXLineChart/LineChart folder into your project
 }
 
 ```
-
-![](http://g.recordit.co/r6OtDd2qoh.gif)
-
 
 详细说明移步[简书](http://www.jianshu.com/p/90c68507e378)
 
