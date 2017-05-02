@@ -103,4 +103,6 @@ typedef NS_ENUM(NSUInteger, AxisType) {
 @property (nonatomic, weak) id<PXLineChartViewDelegate> delegate;
 
 - (void)reloadData;
+
+- (void)scrollAnimationIfcanScroll;
 @end

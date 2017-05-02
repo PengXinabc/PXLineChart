@@ -19,6 +19,10 @@
 @property (nonatomic, strong) PXYview *yAxisView;
 @property (nonatomic, strong) PXChartBackgroundView *chartBackgroundView;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, assign) CGFloat yWidth;
+@property (nonatomic, assign) CGFloat xHeight;
+@property (nonatomic, assign) CGFloat xInterval;
+@property (nonatomic, assign) CGFloat xElements;
 
 @end
 
@@ -41,6 +45,11 @@
 }
 
 - (void)setupView {
+    
+    _yWidth = 50;
+    _xHeight = 30;
+    _xInterval = 50;
+    
     _xAxisView = PXXview.new;
     _yAxisView = PXYview.new;
     _chartBackgroundView = [[PXChartBackgroundView alloc] initWithXaxisView:_xAxisView yAxisView:_yAxisView];
@@ -79,36 +88,32 @@
 }
 
 - (void)setupInitialConstraints {
-    
+    [self clearSubConstraints:self];
     NSDictionary *viewsDict = NSDictionaryOfVariableBindings(_scrollView,_xAxisView,_yAxisView,_chartBackgroundView);//
-    CGFloat yWidth = 50;
     if (_axisAttributes[yMargin]) {
-        yWidth = [_axisAttributes[yMargin] floatValue];
+        _yWidth = [_axisAttributes[yMargin] floatValue];
     }
-    CGFloat xHeight = 30;
     if (_axisAttributes[xMargin]) {
-        xHeight = [_axisAttributes[xMargin] floatValue];
+        _xHeight = [_axisAttributes[xMargin] floatValue];
     }
-    CGFloat xInterval = 50;
     if (_axisAttributes[xElementInterval]) {
-        xInterval = [_axisAttributes[xElementInterval] floatValue];
+        _xInterval = [_axisAttributes[xElementInterval] floatValue];
     }
-    NSUInteger xElements = 0;
     if (_delegate && [_delegate respondsToSelector:@selector(numberOfElementsCountWithAxisType:)]) {
-        xElements = [_delegate numberOfElementsCountWithAxisType:AxisTypeX];
+        _xElements = [_delegate numberOfElementsCountWithAxisType:AxisTypeX];
     }
     CGFloat scrollHeight = CGRectGetHeight(self.frame);
-    CGFloat scrollWidth = CGRectGetWidth(self.frame)-yWidth;
-    CGFloat yHeight = CGRectGetHeight(self.frame)-xHeight;
-    CGFloat xWidth = CGRectGetWidth(self.frame)-yWidth;
-    if (xWidth<(xElements+1)*xInterval) {
-        xWidth=(xElements+1)*xInterval;
+    CGFloat scrollWidth = CGRectGetWidth(self.frame)-_yWidth;
+    CGFloat yHeight = CGRectGetHeight(self.frame)-_xHeight;
+    CGFloat xWidth = CGRectGetWidth(self.frame)-_yWidth;
+    if (xWidth<(_xElements+1)*_xInterval) {
+        xWidth=(_xElements+1)*_xInterval;
     }
     _scrollView.contentSize = CGSizeMake(xWidth, scrollHeight);
     
-    NSDictionary *metrics = @{@"yWidth": @(yWidth),
+    NSDictionary *metrics = @{@"yWidth": @(_yWidth),
                               @"xWidth": @(xWidth),
-                              @"xHeight": @(xHeight),
+                              @"xHeight": @(_xHeight),
                               @"yHeight": @(yHeight),
                               @"scrollHeight": @(scrollHeight),
                               @"scrollWidth": @(scrollWidth),
@@ -153,12 +158,44 @@
                                  metrics:metrics
                                  views:viewsDict]];
   
+    [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentSize.width-CGRectGetWidth(self.scrollView.frame), 0)];
 
+    [self scrollAnimationIfcanScroll];
+}
+
+-(void)clearSubConstraints: (UIView *)targetView {
+    if (targetView != self) {
+        [NSLayoutConstraint deactivateConstraints:targetView.constraints];
+    }
+    for (UIView *subView in targetView.subviews) {
+        [self clearSubConstraints:subView];
+    }
+}
+
+- (void)scrollAnimationIfcanScroll {
+    [self.layer removeAllAnimations];
+    [self.scrollView.layer removeAllAnimations];
+    float duration = 0.5;
+    if (_axisAttributes[scrollAnimationDuration]) {
+        duration = [_axisAttributes[scrollAnimationDuration] floatValue];
+    }
+    if ([_axisAttributes[scrollAnimation] boolValue] && self.scrollView.contentSize.width > CGRectGetWidth(self.scrollView.frame)) {
+        [UIView animateWithDuration:duration delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            
+            [self.scrollView setContentOffset:CGPointMake(0,0)];
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
 }
 
 - (void)reloadData {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
     [_xAxisView refresh];
     [_yAxisView refresh];
     [_chartBackgroundView refresh];
 }
+
 @end

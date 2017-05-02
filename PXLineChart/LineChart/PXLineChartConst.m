@@ -30,4 +30,8 @@ NSString *const pointFont = @"pointFont";
 
 NSString *const pointHide = @"pointHide";
 
+NSString *const firstYAsOrigin = @"firstYAsOrigin";
 
+NSString *const scrollAnimation = @"scrollAnimation"; //
+
+NSString *const scrollAnimationDuration = @"scrollAnimationDuration"; //

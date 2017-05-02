@@ -23,12 +23,20 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     if (self == [super initWithFrame:frame]) {
-        _xElementInterval = 40;
-        _xlineView = UIView.new;
-        _xlineView.backgroundColor = [UIColor grayColor];
-        _xElements = @[].mutableCopy;
+        [self initialize];
     }
     return self;
+}
+
+- (void)initialize {
+    _xElementInterval = 40;
+    _xlineView = UIView.new;
+    _xlineView.backgroundColor = [UIColor grayColor];
+    _xElements = @[].mutableCopy;
+}
+
+- (void)reset {
+    [_xElements removeAllObjects];
 }
 
 - (void)setDelegate:(id<PXLineChartViewDelegate>)delegate {
@@ -37,6 +45,7 @@
 
 - (void)reloadXaxis {
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self reset];
     if (self.axisAttributes[yAxisColor]) {
         self.xlineView.backgroundColor = self.axisAttributes[yAxisColor];
     }
@@ -60,7 +69,7 @@
                                     CGRectGetHeight(self.frame)-elementSize.height,
                                        elementSize.width,
                                        elementSize.height);
-        elementView.center = CGPointMake((elementSize.width/2)+_xElementInterval*(i+1), elementView.center.y);
+        elementView.center = CGPointMake(_xElementInterval*(i+1), elementView.center.y);
         [self addSubview:elementView];
         NSString *xTitle = @"";
         if ([elementView.text length]) {

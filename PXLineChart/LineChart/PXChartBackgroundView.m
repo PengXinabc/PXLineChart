@@ -84,8 +84,12 @@ static char OperationKey;
        isGridHide = [_axisAttributes[gridHide] boolValue];
     }
     if (!isGridHide) {//
+        NSUInteger gridCon = yCon;
+        if ([_axisAttributes[firstYAsOrigin] boolValue]) {
+            gridCon = yCon > 0 ? yCon - 1 : 0;
+        }
         CGRect oldSeparateViewFrame = CGRectZero;
-        for (int i = 0; i < yCon; i++) {
+        for (int i = 0; i < gridCon; i++) {
             UILabel *yElementlab = [_delegate elementWithAxisType:AxisTypeY index:i];
             CGFloat pointY = [_yAxisView pointOfYcoordinate:yElementlab.text];
             CGRect newRect = CGRectZero;
@@ -99,11 +103,20 @@ static char OperationKey;
                 fillcolor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
             }
             if (fillcolor) {
-                if (i % 2 == 0) {
-                    [[UIColor clearColor] setFill];
+                if ([_axisAttributes[firstYAsOrigin] boolValue]) {
+                    if (i % 2 != 0) {
+                        [[UIColor clearColor] setFill];
+                    }else{
+                        [fillcolor setFill];
+                    }
                 }else{
-                    [fillcolor setFill];
+                    if (i % 2 == 0) {
+                        [[UIColor clearColor] setFill];
+                    }else{
+                        [fillcolor setFill];
+                    }
                 }
+                
             }
             UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:newRect];
             [rectPath fill];

@@ -31,4 +31,10 @@ extern NSString *const pointFont; //point font - UIFont
 
 extern NSString *const pointHide; // 显示point - NSNumber（@1-不显示; @0-显示）
 
+extern NSString *const firstYAsOrigin; // y轴起第一个y element 作为y轴原点 （@0-不为原点; @1-作为原点）
+
+extern NSString *const scrollAnimation; //
+
+extern NSString *const scrollAnimationDuration; //
+
 

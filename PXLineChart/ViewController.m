@@ -97,7 +97,10 @@
              gridColor : [UIColor colorWithRed:244.0/255 green:244.0/255 blue:244.0/255 alpha:1],
              gridHide : @0,
              pointHide : @0,
-             pointFont : [UIFont systemFontOfSize:10]};
+             pointFont : [UIFont systemFontOfSize:10],
+             firstYAsOrigin : @1,
+             scrollAnimation : @1,
+             scrollAnimationDuration : @"2"};
 }
 //line count
 - (NSUInteger)numberOfChartlines {
