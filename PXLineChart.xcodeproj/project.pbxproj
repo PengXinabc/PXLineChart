@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76560B5C1EB9F99400CF4945 /* PXLineChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 76560B5B1EB9F99400CF4945 /* PXLineChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76A708C81E9E418B0007BC8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A708C71E9E418B0007BC8E /* main.m */; };
 		76A708CB1E9E418B0007BC8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A708CA1E9E418B0007BC8E /* AppDelegate.m */; };
 		76A708CE1E9E418B0007BC8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A708CD1E9E418B0007BC8E /* ViewController.m */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76560B5B1EB9F99400CF4945 /* PXLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXLineChart.h; sourceTree = "<group>"; };
 		766FA9D71EA2046C00C85C2E /* PointItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointItemProtocol.h; sourceTree = "<group>"; };
 		76A708C31E9E418B0007BC8E /* PXLineChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PXLineChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A708C71E9E418B0007BC8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				76A709021E9F5A170007BC8E /* PXYview.m */,
 				76A709041E9F5A320007BC8E /* PXXview.h */,
 				76A709051E9F5A320007BC8E /* PXXview.m */,
+				76560B5B1EB9F99400CF4945 /* PXLineChart.h */,
 			);
 			path = LineChart;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				76CEA5DF1EB1815E00136FA0 /* PXLineChartConst.h in Headers */,
 				76CEA5E01EB1815E00136FA0 /* PointItemProtocol.h in Headers */,
 				76CEA5E11EB1815E00136FA0 /* PXYview.h in Headers */,
+				76560B5C1EB9F99400CF4945 /* PXLineChart.h in Headers */,
 				76CEA5E21EB1815E00136FA0 /* PXXview.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -755,6 +759,7 @@
 				76CEA5D31EB17FDC00136FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
