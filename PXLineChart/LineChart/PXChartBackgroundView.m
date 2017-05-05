@@ -25,11 +25,11 @@ static char OperationKey;
     
     objc_setAssociatedObject(self, &OperationKey, block, OBJC_ASSOCIATION_RETAIN);
     
-    [self addTarget:self action:@selector(callActionBlock:) forControlEvents:event];
+    [self addTarget:self action:@selector(px_callActionBlock:) forControlEvents:event];
     
 }
 
-- (void)callActionBlock:(UIButton *)sender {
+- (void)px_callActionBlock:(UIButton *)sender {
     
     void(^block)(id sender) = objc_getAssociatedObject(self, &OperationKey);
     
