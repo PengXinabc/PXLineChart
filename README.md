@@ -162,7 +162,7 @@ static bool fill = NO;
 }
 
 ```
-
-详细说明移步[简书](http://www.jianshu.com/p/90c68507e378)
+Swift版本在此[PXLineChart_Swift](https://github.com/PengXinabc/PXLineChart_Swift)
+详细介绍移步[简书](http://www.jianshu.com/p/90c68507e378)
 
 
