@@ -134,7 +134,7 @@
     
     [self addConstraints:[NSLayoutConstraint
                           constraintsWithVisualFormat:
-                          @"V:|[_yAxisView(==yHeight)]|"
+                          @"V:|[_yAxisView(==yHeight)]"
                           options:0
                           metrics:metrics
                           views:viewsDict]];
