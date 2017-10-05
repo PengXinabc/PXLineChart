@@ -77,7 +77,7 @@ static char OperationKey;
     NSUInteger yCon = [_delegate numberOfElementsCountWithAxisType:AxisTypeY];
     BOOL isPointHide = NO;
     if (_axisAttributes[pointHide]) {
-        isPointHide = [_axisAttributes[gridHide] boolValue];
+        isPointHide = [_axisAttributes[pointHide] boolValue];
     }
     BOOL isGridHide = NO;
     if (_axisAttributes[gridHide]) {
