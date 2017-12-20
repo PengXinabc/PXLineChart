@@ -23,5 +23,8 @@
  */
 - (CGFloat)pointOfYcoordinate:(NSString *)yAxisValue;
 
+- (CGFloat)guidHeight:(NSString *)yAxisValue laterYxisValue:(NSString *)laterYxisValue;
+
 - (void)refresh;
 @end
+

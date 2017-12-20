@@ -15,9 +15,10 @@
 @property (nonatomic, assign) CGFloat perPixelOfYvalue;// 坐标值/y值
 @property (strong, nonatomic) NSString *firstYvalue;
 @property (strong, nonatomic) NSString *lastYvalue;
+@property (strong, nonatomic) NSNumber *minSpaceValue;
 @end
 
-#pragma mark - 
+#pragma mark -
 
 @implementation PXYview
 
@@ -57,6 +58,28 @@
     if (_delegate && [_delegate respondsToSelector:@selector(numberOfElementsCountWithAxisType:)]) {
         elementCons = [_delegate numberOfElementsCountWithAxisType:AxisTypeY];
     }
+    
+    NSMutableArray *ytexts = @[].mutableCopy;
+    for (int i = 0; i < elementCons; i++) {
+        UILabel *elementView = [[UILabel alloc] init];
+        if (_delegate && [_delegate respondsToSelector:@selector(elementWithAxisType:index:)]) {
+            elementView = (UILabel *)[_delegate elementWithAxisType:AxisTypeY index:i];
+        }
+        if ([elementView.text length]) {
+            [ytexts addObject:elementView.text];
+        }
+    }
+    NSArray *ytextsCopy = ytexts.copy;
+    NSMutableArray *ySpacevales = @[].mutableCopy;
+    if ([ytextsCopy count] > 2) {
+        for (int i = 0; i < ytextsCopy.count-1; i++) {
+            NSString *yValue = ytexts[i+1];
+            NSString *yCopyValue = ytextsCopy[i];
+            [ySpacevales addObject:@(yValue.integerValue - yCopyValue.integerValue)];
+        }
+        _minSpaceValue=[ySpacevales valueForKeyPath:@"@min.self"];
+    }
+    UIView *lastElementView = nil;
     NSUInteger firstIndex = 1;
     for (int i = 0; i < elementCons; i++) {
         UILabel *elementView = [[UILabel alloc] init];
@@ -68,17 +91,29 @@
         if ([_axisAttributes[firstYAsOrigin] boolValue]) {
             firstIndex = 0;
         }
-        elementView.frame = CGRectMake(0,
-                                       CGRectGetHeight(self.frame)-((elementSize.height/2)+_yElementInterval*(i+firstIndex)),
-                                       CGRectGetWidth(self.frame)-5,
-                                       elementSize.height);
+        
         if(i == 0 && [_axisAttributes[firstYAsOrigin] boolValue]) _firstYvalue = elementView.text;
         if(i == elementCons - 1) _lastYvalue = elementView.text;
+        
+        float index = i;
+        if (_minSpaceValue) {
+            index = (elementView.text.floatValue - _firstYvalue.floatValue) / _minSpaceValue.floatValue;
+        }
+        
+        elementView.frame = CGRectMake(0,
+                                       CGRectGetHeight(self.frame)-((elementSize.height/2)+_yElementInterval*index),
+                                       CGRectGetWidth(self.frame)-5,
+                                       elementSize.height);
         [self addSubview:elementView];
+        lastElementView = elementView;
     }
+    self.ylineView.frame = CGRectMake(CGRectGetWidth(self.frame) - 1, CGRectGetMinY(lastElementView.frame), 1, CGRectGetHeight(self.frame)-CGRectGetMinY(lastElementView.frame));
     if ([_firstYvalue length] && [_lastYvalue length]) {
         if (_lastYvalue.floatValue && _firstYvalue.floatValue >=0 && (_lastYvalue.floatValue > _firstYvalue.floatValue)) {
-            _perPixelOfYvalue = _yElementInterval*(elementCons-1+firstIndex)/(_lastYvalue.floatValue - _firstYvalue.floatValue);
+            if (_minSpaceValue) {
+                _perPixelOfYvalue = _yElementInterval*((_lastYvalue.floatValue - _firstYvalue.floatValue)/_minSpaceValue.floatValue)/(_lastYvalue.floatValue - _firstYvalue.floatValue);
+            }
+            
         }
     }
 }
@@ -102,9 +137,16 @@
     return CGRectGetHeight(self.frame)-(yAxisValue.floatValue - _firstYvalue.floatValue)*_perPixelOfYvalue;
 }
 
+- (CGFloat)guidHeight:(NSString *)yAxisValue laterYxisValue:(NSString *)laterYxisValue {
+    if (![yAxisValue length]) {
+        return 0;
+    }
+    return (laterYxisValue.floatValue - yAxisValue.floatValue)*_perPixelOfYvalue;
+}
 - (void)refresh {
     [self setNeedsLayout];
     [self layoutIfNeeded];
 }
 
 @end
+

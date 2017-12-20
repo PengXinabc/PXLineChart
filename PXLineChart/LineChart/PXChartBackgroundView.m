@@ -45,7 +45,7 @@ static char OperationKey;
 @property (nonatomic, strong) PXYview *yAxisView;
 @end
 
-#pragma mark - 
+#pragma mark -
 
 @implementation PXChartBackgroundView
 
@@ -77,11 +77,11 @@ static char OperationKey;
     NSUInteger yCon = [_delegate numberOfElementsCountWithAxisType:AxisTypeY];
     BOOL isPointHide = NO;
     if (_axisAttributes[pointHide]) {
-        isPointHide = [_axisAttributes[gridHide] boolValue];
+        isPointHide = [_axisAttributes[pointHide] boolValue];
     }
     BOOL isGridHide = NO;
     if (_axisAttributes[gridHide]) {
-       isGridHide = [_axisAttributes[gridHide] boolValue];
+        isGridHide = [_axisAttributes[gridHide] boolValue];
     }
     if (!isGridHide) {//
         NSUInteger gridCon = yCon;
@@ -91,36 +91,38 @@ static char OperationKey;
         CGRect oldSeparateViewFrame = CGRectZero;
         for (int i = 0; i < gridCon; i++) {
             UILabel *yElementlab = [_delegate elementWithAxisType:AxisTypeY index:i];
-            CGFloat pointY = [_yAxisView pointOfYcoordinate:yElementlab.text];
-            CGRect newRect = CGRectZero;
-            if (i!=0) {
-                newRect = CGRectOffset(oldSeparateViewFrame, 0, -_yAxisView.yElementInterval);
-            }else{
-                newRect = CGRectMake(0, pointY, CGRectGetWidth(self.frame), _yAxisView.yElementInterval);
-            }
-            UIColor *fillcolor = _axisAttributes[gridColor];
-            if (!fillcolor) {
-                fillcolor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
-            }
-            if (fillcolor) {
-                if ([_axisAttributes[firstYAsOrigin] boolValue]) {
-                    if (i % 2 != 0) {
-                        [[UIColor clearColor] setFill];
-                    }else{
-                        [fillcolor setFill];
-                    }
-                }else{
-                    if (i % 2 == 0) {
-                        [[UIColor clearColor] setFill];
-                    }else{
-                        [fillcolor setFill];
-                    }
-                }
+            CGFloat guidHeight = 0;
+            if (i < gridCon - 1) {
+                UILabel *ylaterElementlab = [_delegate elementWithAxisType:AxisTypeY index:i+1];
+                guidHeight = [_yAxisView guidHeight:yElementlab.text laterYxisValue:ylaterElementlab.text];
+                CGFloat pointY = [_yAxisView pointOfYcoordinate:ylaterElementlab.text];
+                CGRect newRect = CGRectMake(0, pointY, CGRectGetWidth(self.frame), guidHeight);
                 
+                UIColor *fillcolor = _axisAttributes[gridColor];
+                if (!fillcolor) {
+                    fillcolor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
+                }
+                if (fillcolor) {
+                    if ([_axisAttributes[firstYAsOrigin] boolValue]) {
+                        if (i % 2 != 0) {
+                            [[UIColor clearColor] setFill];
+                        }else{
+                            [fillcolor setFill];
+                        }
+                    }else{
+                        if (i % 2 == 0) {
+                            [[UIColor clearColor] setFill];
+                        }else{
+                            [fillcolor setFill];
+                        }
+                    }
+                    
+                }
+                UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:newRect];
+                [rectPath fill];
+                oldSeparateViewFrame = newRect;
             }
-            UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:newRect];
-            [rectPath fill];
-            oldSeparateViewFrame = newRect;
+            
         }
     }
     
@@ -250,7 +252,7 @@ static char OperationKey;
             CGContextAddPath(ctx, path.CGPath);
             CGContextStrokePath(ctx);
         }
-    
+        
     }
     
 }
@@ -265,3 +267,4 @@ static char OperationKey;
     [self setNeedsDisplay];
 }
 @end
+

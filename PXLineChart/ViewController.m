@@ -26,8 +26,9 @@
     [super viewDidLoad];
     _pXLineChartView.delegate = self;
     _xElements = @[@"16-2",@"16-3",@"16-4",@"16-5",@"16-6",@"16-7",@"16-8",@"16-9",@"16-10",@"16-11",@"16-12",@"17-01",@"17-02",@"17-03",@"17-04",@"17-05"];
-    _yElements = @[@"1000",@"2000",@"3000",@"4000",@"5000"];
-    
+    //    _yElements = @[@"1000",@"2000",@"3000",@"4000",@"5000"];
+    //    _yElements = @[@"0",@"500",@"1000",@"2000",@"3000",@"4000"];
+    _yElements = @[@"0",@"500",@"1000",@"1500",@"2100",@"3300",@"5000"];
     self.lines = [self lines:NO];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -157,3 +158,4 @@ static bool fill = NO;
 
 
 @end
+
