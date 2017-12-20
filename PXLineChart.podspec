@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "PXLineChart"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "一个简单的可左右滑动的折线走势图"
   s.homepage     = "https://github.com/PengXinabc/PXLineChart"
 
