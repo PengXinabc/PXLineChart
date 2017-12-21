@@ -3,10 +3,13 @@
 
 # 概述
 
-一个简单的可滑动的折线图，可滑动，可添加多条
+* 一个简单的可滑动的折线图，可滑动，可添加多条
 
 ![](http://upload-images.jianshu.io/upload_images/1131567-f15b020baf9e4e12.gif?imageMogr2/auto-orient/strip)
 
+* y轴不等分
+
+![abc.gif](http://upload-images.jianshu.io/upload_images/1131567-2a2f1d96096d3598.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 # 安装
 * CocoaPods
 

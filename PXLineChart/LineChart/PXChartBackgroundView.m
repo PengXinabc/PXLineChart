@@ -88,7 +88,6 @@ static char OperationKey;
         if ([_axisAttributes[firstYAsOrigin] boolValue]) {
             gridCon = yCon > 0 ? yCon - 1 : 0;
         }
-        CGRect oldSeparateViewFrame = CGRectZero;
         for (int i = 0; i < gridCon; i++) {
             UILabel *yElementlab = [_delegate elementWithAxisType:AxisTypeY index:i];
             CGFloat guidHeight = 0;
@@ -120,7 +119,6 @@ static char OperationKey;
                 }
                 UIBezierPath *rectPath = [UIBezierPath bezierPathWithRect:newRect];
                 [rectPath fill];
-                oldSeparateViewFrame = newRect;
             }
             
         }
